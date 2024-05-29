@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file, flash
 import io
 from flask_sqlalchemy import SQLAlchemy
@@ -13,7 +11,6 @@ from flask_admin import AdminIndexView, Admin
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length
-import click
 
 app = Flask(__name__, template_folder='template')
 
@@ -165,16 +162,15 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-@click.command(name='init-db')
-def init_db():
+# Database initialization logic
+@app.before_first_request
+def initialize_database():
     db.create_all()
     if not User.query.filter_by(username='tm').first():
         new_user = User(username='tm', password=generate_password_hash('1234'))
         db.session.add(new_user)
         db.session.commit()
         print("Database tables created and initial user added")
-
-app.cli.add_command(init_db)
 
 if __name__ == '__main__':
     app.run()
