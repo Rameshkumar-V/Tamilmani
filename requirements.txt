@@ -8,3 +8,11 @@ Flask-Migrate==6.0.0
 Flask-WTF==1.0.1
 mysql-connector-python==8.0.31
 gunicorn==21.2.0
+flask
+sqlalchemy
+mysql
+mysqlclient
+pysqlite3
+Flask-Login
+Flask-SQLAlchemy
+gunicorn
