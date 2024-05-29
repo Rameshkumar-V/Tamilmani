@@ -4,5 +4,6 @@ flask-admin==1.6.1
 Flask-Uploads==0.2.1
 flask-paginate
 flask-login==0.6.3
+Flask-Migrate
 mysql
 mysql-connector-python
