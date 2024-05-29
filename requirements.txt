@@ -2,7 +2,7 @@ Flask==3.0.3
 Flask-SQLAlchemy==3.1.1
 flask-admin==1.6.1
 Flask-Uploads==0.2.1
-Flask-Paginate==0.10.0
+Flask-Paginate
 Flask-Login==0.6.3
 Flask-Migrate==6.0.0
 Flask-WTF==1.0.1
