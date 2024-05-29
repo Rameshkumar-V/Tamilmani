@@ -18,9 +18,9 @@ app = Flask(__name__)
 
 # CONFIGURATIONS
 app.config['SECRET_KEY'] = 'your_secret_key' # secret key
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmproject.db' # db path
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmproject.db' # db path
 
-app.config['SQLALCHEMY_DATABASE_URI'] ="mysql://rk:rk@localhost/blog"
+#app.config['SQLALCHEMY_DATABASE_URI'] ="mysql://rk:rk@localhost/blog"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'  # Temporary upload folder
 
