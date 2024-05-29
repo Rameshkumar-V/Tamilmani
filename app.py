@@ -247,4 +247,4 @@ if __name__ == '__main__':
             new_user = User(username='tm', password=generate_password_hash('1234'))
             db.session.add(new_user)
             db.session.commit()
-    app.run(debug=True)
+    app.run(debug=False)
