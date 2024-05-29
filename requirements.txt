@@ -2,10 +2,9 @@ Flask==3.0.3
 Flask-SQLAlchemy==3.1.1
 flask-admin==1.6.1
 Flask-Uploads==0.2.1
-flask-paginate
-flask-login==0.6.3
-Flask-Migrate
-Flask-WTF
-mysql
-gunicorn
-mysql-connector-python
+Flask-Paginate==0.10.0
+Flask-Login==0.6.3
+Flask-Migrate==6.0.0
+Flask-WTF==1.0.1
+mysql-connector-python==8.0.31
+gunicorn==21.2.0
