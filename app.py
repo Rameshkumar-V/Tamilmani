@@ -76,7 +76,14 @@ class MyAdminIndexView(AdminIndexView):
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('login'))
 
-
+with app.app_context():
+        db.create_all()
+        print("Db created sucess       ddddddddddddddddddddddddddddddddddddddddddddddddd")
+        if not User.query.filter_by(username='tm').first():
+            new_user = User(username='tm', password=generate_password_hash('1234'))
+            db.session.add(new_user)
+            db.session.commit()
+            print("DATABASE CREATED IF")
 # ADMIN INITIALIZING
 db_admin = Admin(app, name='microblog', template_mode='bootstrap3',index_view=MyAdminIndexView())
 
@@ -104,6 +111,7 @@ END OF ADMIN SECTION
 # HOME PAGE
 @app.route('/')
 def home():
+    print("Home page vanthuta ddddddddddddddddddddddddddddddddddd")
     page_data = PageInformation.query.first()
     contact_info_data = ContactInfo.query.all()
     categories = Category.query.all()
