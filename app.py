@@ -248,13 +248,5 @@ if __name__ == '__main__':
             db.session.add(new_user)
             db.session.commit()
             print("DATABASE CREATED IF")
-    app.run(debug=False)
-else:
-    print("DATABASE CREATED ELSE")
-    with app.app_context():
-        db.create_all()
-        if not User.query.filter_by(username='tm').first():
-            new_user = User(username='tm', password=generate_password_hash('1234'))
-            db.session.add(new_user)
-            db.session.commit()
-        app.run()
+    app.run()
+
